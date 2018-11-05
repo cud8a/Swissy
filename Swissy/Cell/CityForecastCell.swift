@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FontAwesome_swift
 
 class CityForecastCell: UITableViewCell {
 
@@ -16,6 +17,7 @@ class CityForecastCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        labelIcon.font = UIFont.fontAwesome(ofSize: 40, style: .solid)
     }
 
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {

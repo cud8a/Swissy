@@ -23,17 +23,17 @@ enum WeatherIcon: String {
     var image: String {
         switch self {
         case .partlyCloudyNight:
-            return ""
+            return String.fontAwesomeIcon(name: .cloudMoon)
         case .clearDay:
-            return ""
+            return String.fontAwesomeIcon(name: .sun)
         case .clearNight:
-            return ""
-        case .rain:
-            return ""
+            return String.fontAwesomeIcon(name: .moon)
+        case .partlyCloudyDay:
+            return String.fontAwesomeIcon(name: .cloudSun)
         case .cloudy:
-            return ""
+            return String.fontAwesomeIcon(name: .cloud)
         default:
-            return ""
+            return String.fontAwesomeIcon(name: .surprise)
         }
     }
 }

@@ -11,4 +11,5 @@ target 'Swissy' do
   pod 'ObjectMapper'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'FontAwesome.swift'
 end

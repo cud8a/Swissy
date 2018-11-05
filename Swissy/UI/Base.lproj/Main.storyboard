@@ -71,11 +71,12 @@
                         <viewLayoutGuide key="safeArea" id="avn-kL-35F"/>
                     </view>
                     <navigationItem key="navigationItem" title="Städte" id="uGI-VV-T0d">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="qQ8-pH-53b">
+                        <barButtonItem key="rightBarButtonItem" id="xdu-mh-U0f">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="itemAdd" destination="xdu-mh-U0f" id="z8F-UP-I49"/>
                         <outlet property="tableView" destination="V9Y-Bj-cbx" id="LhW-98-d8X"/>
                     </connections>
                 </viewController>
@@ -107,7 +108,4 @@
             <point key="canvasLocation" x="408.80000000000001" y="156.97151424287858"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="menu" width="20" height="16"/>
-    </resources>
 </document>

@@ -47,6 +47,7 @@ PODS:
     - FirebaseCore (~> 5.1)
     - GoogleUtilities/Environment (~> 5.3)
     - GoogleUtilities/UserDefaults (~> 5.3)
+  - FontAwesome.swift (1.4.5)
   - GoogleAppMeasurement (5.3.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
@@ -114,6 +115,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.7)
   - Firebase/Core
   - Firebase/Firestore
+  - FontAwesome.swift
   - ObjectMapper
   - TinyConstraints
 
@@ -127,6 +129,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseFirestore
     - FirebaseInstanceID
+    - FontAwesome.swift
     - GoogleAppMeasurement
     - GoogleUtilities
     - gRPC
@@ -149,6 +152,7 @@ SPEC CHECKSUMS:
   FirebaseCore: d16552f06821489ce1affe2e5e3e5593402ddfe3
   FirebaseFirestore: 162502df850b584126c609f3449acfb7230d8c1a
   FirebaseInstanceID: e2fa4cb35ef5558c200f7f0ad8a53e212215f93e
+  FontAwesome.swift: a351dbb86b9fcec9aad6bce2fdd5b95e9a7b8828
   GoogleAppMeasurement: 5029d78f2b438bd30ffb44e6c558b57c21622727
   GoogleUtilities: abb092d2c12e817fa3e0e7b274987dd72fb86ec3
   gRPC: 9d4c549f37c7cef22478634bac7a0405b6e3dbfb
@@ -162,6 +166,6 @@ SPEC CHECKSUMS:
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   TinyConstraints: dbf7519aefc01ea59d62244300c7718aec68e280
 
-PODFILE CHECKSUM: b743b1c6b34e26e1087a4ce6264966decc97552c
+PODFILE CHECKSUM: cdac39bd6256bc39a03b1a39941721879fe8c865
 
 COCOAPODS: 1.5.3

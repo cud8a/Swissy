@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		020EB333218E43EE00B9AFE0 /* fa-solid-900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 020EB332218E43EE00B9AFE0 /* fa-solid-900.ttf */; };
 		020EB335218E4ECF00B9AFE0 /* StartupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020EB334218E4ECF00B9AFE0 /* StartupViewModel.swift */; };
 		020EB337218E4F5A00B9AFE0 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020EB336218E4F5A00B9AFE0 /* Dynamic.swift */; };
 		020EB339218E50C200B9AFE0 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020EB338218E50C200B9AFE0 /* ViewModelState.swift */; };
@@ -35,7 +34,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		020EB332218E43EE00B9AFE0 /* fa-solid-900.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-solid-900.ttf"; sourceTree = "<group>"; };
 		020EB334218E4ECF00B9AFE0 /* StartupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupViewModel.swift; sourceTree = "<group>"; };
 		020EB336218E4F5A00B9AFE0 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		020EB338218E50C200B9AFE0 /* ViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelState.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 				02FAF354218F610600A6E023 /* ViewModel */,
 				02FAF353218F60F000A6E023 /* Controller */,
 				02FAF34C218F5A3100A6E023 /* Model */,
-				020EB332218E43EE00B9AFE0 /* fa-solid-900.ttf */,
 				02CF30C6218DEB27003ADDC6 /* AppDelegate.swift */,
 				02CF30CD218DEB2A003ADDC6 /* Assets.xcassets */,
 				02CF30D2218DEB2A003ADDC6 /* Info.plist */,
@@ -262,7 +259,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				02CF30D1218DEB2A003ADDC6 /* LaunchScreen.storyboard in Resources */,
-				020EB333218E43EE00B9AFE0 /* fa-solid-900.ttf in Resources */,
 				02CF30CE218DEB2A003ADDC6 /* Assets.xcassets in Resources */,
 				02FAF35B218F621100A6E023 /* CityForecastCell.xib in Resources */,
 				02CF30CC218DEB27003ADDC6 /* Main.storyboard in Resources */,
@@ -282,6 +278,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Swissy/Pods-Swissy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -298,6 +295,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
