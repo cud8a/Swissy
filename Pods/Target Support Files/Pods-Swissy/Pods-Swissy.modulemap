@@ -1,0 +1,6 @@
+framework module Pods_Swissy {
+  umbrella header "Pods-Swissy-umbrella.h"
+
+  export *
+  module * { export * }
+}
