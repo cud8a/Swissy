@@ -21,10 +21,7 @@ enum CitiesService {
             if let error = error {
                 completion(nil, error)
             } else {
-                var cities: [City] = []
-                querySnapshot?.documents.forEach { snapshot in
-                    cities.append(City(id: snapshot.documentID, data: snapshot.data()))
-                }
+                let cities = querySnapshot?.documents.map {City(id: $0.documentID, data: $0.data())}
                 completion(cities, nil)
             }
         }
