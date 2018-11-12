@@ -14,6 +14,7 @@ class CitiesViewController: UIViewController {
     @IBOutlet weak var itemAdd: UIBarButtonItem!
     
     var viewModel: CitiesViewModel?
+    var pull: PullToRefresh?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,5 +25,31 @@ class CitiesViewController: UIViewController {
         if let viewModel = viewModel {
             tableView.dataSource = viewModel
         }
+        
+        pull = PullToRefresh(tableView: tableView)
+        pull?.delegate = self
+        
+        bindModel()
+    }
+    
+    @IBAction func addClicked(_ sender: Any) {
+        pull?.reloadTable()
+    }
+    
+    private func bindModel() {
+        viewModel?.reload.bind { [weak self] state in
+            switch state {
+            case .success: ()
+                self?.pull?.reloadTable()
+            default: ()
+            }
+        }
+    }
+}
+
+extension CitiesViewController: PullToRefreshDelegate {
+    func refresh() {
+        UIImpactFeedbackGenerator().impactOccurred()
+        viewModel?.startReload()
     }
 }

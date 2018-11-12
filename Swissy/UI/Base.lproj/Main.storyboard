@@ -73,6 +73,9 @@
                     <navigationItem key="navigationItem" title="Städte" id="uGI-VV-T0d">
                         <barButtonItem key="rightBarButtonItem" id="xdu-mh-U0f">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addClicked:" destination="P86-6M-yeM" id="zMV-vM-j30"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

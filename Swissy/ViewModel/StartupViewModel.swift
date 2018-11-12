@@ -11,6 +11,7 @@ import Alamofire
 import ObjectMapper
 
 class StartupViewModel: NSObject {
+    
     let state: Dynamic<ViewModelState> = Dynamic(.initial)
     let segue: Dynamic<String?> = Dynamic(nil)
     var forecasts: [String: ForecastResponse] = [:]

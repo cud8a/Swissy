@@ -10,11 +10,35 @@ import UIKit
 
 class CitiesViewModel: NSObject {
  
+    let reload: Dynamic<ViewModelState> = Dynamic(.initial)
+    
     var forecasts: [String: ForecastResponse] = [:]
     var cities: [City]?
     
     func setupTable(_ tableView: UITableView) {
         Cell.cityForecast.register(tableView)
+    }
+    
+    func startReload() {
+        reload.value = .loading
+        getForecast(withIndex: 0)
+    }
+    
+    fileprivate func getForecast(withIndex index: Int) {
+        
+        guard let city = cities?[safe: index] else {
+            reload.value = .success
+            return
+        }
+        
+        ForecastService.forecast(withCity: city) { [weak self] forecast, error in
+            if let id = city.id, let forecast = forecast {
+                self?.forecasts[id] = forecast
+                self?.getForecast(withIndex: index + 1)
+            } else {
+                self?.reload.value = .error
+            }
+        }
     }
 }
 

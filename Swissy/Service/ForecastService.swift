@@ -17,6 +17,7 @@ enum ForecastService {
         
         let formatter = NumberFormatter()
         formatter.maximumFractionDigits = 5
+        formatter.minimumIntegerDigits = 1
         formatter.decimalSeparator = "."
         
         guard let lat = city.latitude, let latitude = formatter.string(for: lat),
@@ -28,7 +29,7 @@ enum ForecastService {
         let url = ForecastService.url.replacingOccurrences(of: "$LAT", with: latitude).replacingOccurrences(of: "$LONG", with: longitude)
         
         if let url = URL(string: url) {
-            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.prettyPrinted, headers: nil).validate().responseJSON { response in
+            let request = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.prettyPrinted, headers: nil).validate().responseJSON { response in
                 switch response.result {
                 case .success(let JSON):
                     let forecastResponse = Mapper<ForecastResponse>().map(JSONObject: JSON)
@@ -37,6 +38,8 @@ enum ForecastService {
                     completion(nil, error)
                 }
             }
+            
+            debugPrint(request)
         }
     }
 }
