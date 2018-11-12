@@ -19,8 +19,21 @@ class PullToRefresh: NSObject {
     private let view = PullToRefreshView()
     private var state = State.ready
     private var oldOffset = CGFloat(0)
-    private var canResetFromRefresh = false
-    private var canResetFromUI = false
+    
+    private var canResetFromRefresh = false {
+        didSet {
+            guard canResetFromRefresh else {return}
+            _reloadTable()
+        }
+    }
+    
+    private var canResetFromUI = false {
+        didSet {
+            guard canResetFromUI else {return}
+            _reloadTable()
+        }
+    }
+    
     private weak var tableTopConstraint: NSLayoutConstraint?
     
     var limit: CGFloat {
@@ -56,7 +69,6 @@ class PullToRefresh: NSObject {
             constraint?.isActive = false
             tableTopConstraint = _tableView.topToBottom(of: view)
             canResetFromUI = true
-            _reloadTable()
         } else if offset == 0 {
             view.reset()
         }
@@ -66,7 +78,6 @@ class PullToRefresh: NSObject {
     
     func reloadTable() {
         canResetFromRefresh = true
-        _reloadTable()
     }
     
     private func _reloadTable() {
