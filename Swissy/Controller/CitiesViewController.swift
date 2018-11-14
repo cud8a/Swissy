@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class CitiesViewController: UIViewController {
 
@@ -38,11 +39,7 @@ class CitiesViewController: UIViewController {
     
     private func bindModel() {
         viewModel?.reload.bind { [weak self] state in
-            switch state {
-            case .success: ()
-                self?.pull?.reloadTable()
-            default: ()
-            }
+            self?.pull?.reloadTable()
         }
     }
 }

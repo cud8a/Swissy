@@ -26,6 +26,7 @@ struct WeatherInfo {
     var summary: String?
     var icon: WeatherIcon?
     var temperature: String?
+    var temperatureMax: Int?
 }
 
 class TemperatureTransform: TransformType {
@@ -49,6 +50,25 @@ class TemperatureTransform: TransformType {
     }
 }
 
+class TemperatureMaxTransform: TransformType {
+    
+    func transformFromJSON(_ value: Any?) -> Int? {
+        if let d = value as? Double {
+            return Int(d)
+        }
+        
+        return nil
+    }
+    
+    func transformToJSON(_ value: Int?) -> Double? {
+        if let i = value {
+            return Double(i)
+        }
+        
+        return nil
+    }
+}
+
 extension WeatherInfo: Mappable {
     init?(map: Map) {}
     
@@ -56,6 +76,7 @@ extension WeatherInfo: Mappable {
         summary <- map["summary"]
         icon <- map["icon"]
         temperature <- (map["temperature"], TemperatureTransform())
+        temperatureMax <- (map["temperatureMax"], TemperatureMaxTransform())
     }
 }
 

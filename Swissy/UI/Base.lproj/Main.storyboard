@@ -48,7 +48,7 @@
             </objects>
             <point key="canvasLocation" x="-502" y="157"/>
         </scene>
-        <!--Städte-->
+        <!--Gebiete-->
         <scene sceneID="w4D-Og-XJn">
             <objects>
                 <viewController id="P86-6M-yeM" customClass="CitiesViewController" customModule="Swissy" customModuleProvider="target" sceneMemberID="viewController">
@@ -70,7 +70,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="avn-kL-35F"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Städte" id="uGI-VV-T0d">
+                    <navigationItem key="navigationItem" title="Gebiete" id="uGI-VV-T0d">
                         <barButtonItem key="rightBarButtonItem" id="xdu-mh-U0f">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>

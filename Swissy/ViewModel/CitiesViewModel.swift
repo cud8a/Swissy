@@ -32,11 +32,13 @@ class CitiesViewModel: NSObject {
         }
         
         ForecastService.forecast(withCity: city) { [weak self] forecast, error in
-            if let id = city.id, let forecast = forecast {
-                self?.forecasts[id] = forecast
-                self?.getForecast(withIndex: index + 1)
-            } else {
-                self?.reload.value = .error
+            main {
+                if let id = city.id, let forecast = forecast {
+                    self?.forecasts[id] = forecast
+                    self?.getForecast(withIndex: index + 1)
+                } else {
+                    self?.reload.value = .error
+                }
             }
         }
     }
@@ -53,6 +55,7 @@ extension CitiesViewModel: UITableViewDataSource {
             if let id = city.id, let currently = forecasts[id]?.currently {
                 cell.labelInfo.text = currently.info
                 cell.labelIcon.text = currently.icon?.image
+                cell.forecast.forecast = forecasts[id]?.daily?.data?.map({CGFloat(2 * ($0.temperatureMax ?? 0))})
             }
             return cell
         }

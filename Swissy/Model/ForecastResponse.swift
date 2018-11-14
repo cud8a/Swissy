@@ -10,6 +10,7 @@ import ObjectMapper
 
 struct ForecastResponse {
     var currently: WeatherInfo?
+    var daily: Forecast?
 }
 
 extension ForecastResponse: Mappable {
@@ -17,5 +18,6 @@ extension ForecastResponse: Mappable {
     
     mutating func mapping(map: Map) {
         currently <- map["currently"]
+        daily <- map["daily"]
     }
 }

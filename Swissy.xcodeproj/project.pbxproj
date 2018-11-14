@@ -31,6 +31,8 @@
 		02FAF368218F7BC000A6E023 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FAF367218F7BC000A6E023 /* City.swift */; };
 		02FAF36D218F7E9600A6E023 /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FAF36C218F7E9600A6E023 /* ForecastService.swift */; };
 		02FAF36F218F800100A6E023 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FAF36E218F800100A6E023 /* ServiceError.swift */; };
+		02FF6D74219CBC550088485A /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FF6D73219CBC550088485A /* ForecastView.swift */; };
+		02FF6D77219CC9200088485A /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FF6D76219CC9200088485A /* Forecast.swift */; };
 		46901D9702A95CEE1DDE6856 /* Pods_Swissy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F049E050350DE0EFA26B5234 /* Pods_Swissy.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,8 @@
 		02FAF367218F7BC000A6E023 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		02FAF36C218F7E9600A6E023 /* ForecastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 		02FAF36E218F800100A6E023 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		02FF6D73219CBC550088485A /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
+		02FF6D76219CC9200088485A /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		D6E65D58049F4B6D0111F05F /* Pods-Swissy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swissy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swissy/Pods-Swissy.debug.xcconfig"; sourceTree = "<group>"; };
 		F049E050350DE0EFA26B5234 /* Pods_Swissy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swissy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F813A9D9E8FA91894C2B4A94 /* Pods-Swissy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swissy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swissy/Pods-Swissy.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				02648AD02190EE6900ED94C9 /* GoogleService-Info.plist */,
 				02FAF36B218F7E8100A6E023 /* Service */,
 				02FAF361218F6FD400A6E023 /* Extension */,
+				02FF6D75219CBC5C0088485A /* View */,
 				02FAF35C218F622600A6E023 /* UI */,
 				02FAF357218F61E600A6E023 /* Cell */,
 				02FAF354218F610600A6E023 /* ViewModel */,
@@ -130,6 +135,7 @@
 				02FAF34D218F5A4400A6E023 /* WeatherInfo.swift */,
 				02FAF34F218F5AB100A6E023 /* WeatherIcon.swift */,
 				02FAF367218F7BC000A6E023 /* City.swift */,
+				02FF6D76219CC9200088485A /* Forecast.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +196,14 @@
 				0298EB382190CE5E00C0239B /* CitiesService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		02FF6D75219CBC5C0088485A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				02FF6D73219CBC550088485A /* ForecastView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E2900D1B4B12F104B9E5046D /* Pods */ = {
@@ -360,10 +374,12 @@
 				02CF30C9218DEB27003ADDC6 /* StartupViewController.swift in Sources */,
 				02FAF350218F5AB100A6E023 /* WeatherIcon.swift in Sources */,
 				02FAF35E218F659B00A6E023 /* Segue.swift in Sources */,
+				02FF6D74219CBC550088485A /* ForecastView.swift in Sources */,
 				02CF30C7218DEB27003ADDC6 /* AppDelegate.swift in Sources */,
 				02B78DD721938360004487D5 /* PullToRefresh.swift in Sources */,
 				02FAF34B218F59A500A6E023 /* ForecastResponse.swift in Sources */,
 				02FAF368218F7BC000A6E023 /* City.swift in Sources */,
+				02FF6D77219CC9200088485A /* Forecast.swift in Sources */,
 				0298EB392190CE5E00C0239B /* CitiesService.swift in Sources */,
 				02FAF363218F6FF600A6E023 /* Collection+Swissy.swift in Sources */,
 				02FAF35A218F621100A6E023 /* CityForecastCell.swift in Sources */,

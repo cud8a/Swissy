@@ -14,10 +14,11 @@ class CityForecastCell: UITableViewCell {
     @IBOutlet weak var labelCity: UILabel!
     @IBOutlet weak var labelInfo: UILabel!
     @IBOutlet weak var labelIcon: UILabel!
+    @IBOutlet weak var forecast: ForecastView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        labelIcon.font = UIFont.fontAwesome(ofSize: 40, style: .solid)
+        labelIcon.font = UIFont.fontAwesome(ofSize: 20, style: .solid)
     }
 
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {

@@ -17,7 +17,6 @@ class PullToRefresh: NSObject {
     weak var delegate: PullToRefreshDelegate?
     @objc private let _tableView: UITableView
     private let view = PullToRefreshView()
-    private var state = State.ready
     private var oldOffset = CGFloat(0)
     
     private var canResetFromRefresh = false {
@@ -34,10 +33,18 @@ class PullToRefresh: NSObject {
         }
     }
     
+    private var state = State.ready {
+        didSet {
+            if state == .pulling {
+                view.centerPoints()
+            }
+        }
+    }
+    
     private weak var tableTopConstraint: NSLayoutConstraint?
     
     var limit: CGFloat {
-        return CGFloat(72)
+        return CGFloat(92)
     }
     
     enum State {
@@ -58,7 +65,11 @@ class PullToRefresh: NSObject {
         guard state != .refreshing else {return}
         
         let offset = _tableView.contentOffset.y * -1
-        view.updateHeight(max(0, offset))
+        let height = max(0, offset)
+        view.updateHeight(height)
+        if state == .ready {
+            view.adaptConstraints(toHeight: height)
+        }
         
         if offset > oldOffset && offset > limit && state == .ready {
             delegate?.refresh()
@@ -68,8 +79,8 @@ class PullToRefresh: NSObject {
             let constraint = tableTopConstraint ?? _tableView.superview?.constraints.first(where: {$0.firstAttribute == .top})
             constraint?.isActive = false
             tableTopConstraint = _tableView.topToBottom(of: view)
-            canResetFromUI = true
-        } else if offset == 0 {
+            delay(closure: { self.canResetFromUI = true }, after: .seconds(1))
+        } else if offset == 0 && state == .refreshing {
             view.reset()
         }
         
@@ -102,6 +113,9 @@ private class PullToRefreshView: UIView {
     
     weak var heightConstraint: NSLayoutConstraint?
     
+    weak var pointLeftTopConstraint: NSLayoutConstraint?
+    weak var pointLeftCenterConstraint: NSLayoutConstraint?
+    
     weak var pointCenterTopConstraint: NSLayoutConstraint?
     weak var pointCenterTopConstraint2: NSLayoutConstraint?
     weak var pointCenterBottomConstraint: NSLayoutConstraint?
@@ -109,6 +123,7 @@ private class PullToRefreshView: UIView {
     weak var pointRightTopConstraint: NSLayoutConstraint?
     weak var pointRightTopConstraint2: NSLayoutConstraint?
     weak var pointRightBottomConstraint: NSLayoutConstraint?
+    weak var pointRightCenterConstraint: NSLayoutConstraint?
     
     var pointLeft: UIView?
     var pointCenter: UIView?
@@ -126,6 +141,32 @@ private class PullToRefreshView: UIView {
     
     func updateHeight(_ height: CGFloat) {
         heightConstraint?.constant = height
+    }
+    
+    func adaptConstraints(toHeight height: CGFloat) {
+        
+        if height < 2 * padding + size {
+            
+            if let _ = pointCenterBottomConstraint {
+                pointCenterBottomConstraint?.isActive = false
+            }
+            
+            if let _ = pointRightBottomConstraint {
+                pointRightBottomConstraint?.isActive = false
+            }
+            
+            if let _ = pointCenterTopConstraint2 {
+                pointCenterTopConstraint2?.isActive = false
+            }
+            
+            if pointCenterTopConstraint == nil {
+                pointCenterTopConstraint = pointCenter?.topToSuperview(offset: padding, relation: .equalOrGreater)
+            }
+            
+            if pointRightTopConstraint == nil {
+                pointRightTopConstraint = pointRight?.topToSuperview(offset: padding, relation: .equalOrGreater)
+            }
+        }
         
         if height > 2 * padding + size {
             
@@ -138,17 +179,56 @@ private class PullToRefreshView: UIView {
             }
         }
         
-        if height > 2 * padding + size + 10, pointCenterTopConstraint2 == nil {
-            pointCenterBottomConstraint?.isActive = false
-            pointCenterTopConstraint?.isActive = false
-            pointCenterTopConstraint2 = pointCenter?.topToSuperview(offset: padding + 10)
+        if height < 2 * padding + size + 20, pointCenterTopConstraint2 != nil {
+            pointCenterTopConstraint2?.isActive = false
+            pointCenterBottomConstraint = pointCenter?.bottomToSuperview(offset: -padding)
         }
         
-        if height > 2 * padding + size + 20, pointRightTopConstraint2 == nil {
+        if height > 2 * padding + size + 20, pointCenterTopConstraint2 == nil {
+            pointCenterBottomConstraint?.isActive = false
+            pointCenterTopConstraint?.isActive = false
+            pointCenterTopConstraint2 = pointCenter?.topToSuperview(offset: padding + 20)
+        }
+        
+        if height < 2 * padding + size + 40, pointRightTopConstraint2 != nil {
+            pointRightTopConstraint2?.isActive = false
+            pointRightBottomConstraint = pointRight?.bottomToSuperview(offset: -padding)
+        }
+        
+        if height > 2 * padding + size + 40, pointRightTopConstraint2 == nil {
             pointRightBottomConstraint?.isActive = false
             pointRightTopConstraint?.isActive = false
-            pointRightTopConstraint2 = pointRight?.topToSuperview(offset: padding + 20)
+            pointRightTopConstraint2 = pointRight?.topToSuperview(offset: padding + 40)
         }
+    }
+    
+    func centerPoints() {
+        superview?.layoutIfNeeded()
+        UIView.animate(withDuration: 0.3, animations: {
+            self.pointLeftTopConstraint?.isActive = false
+            self.pointRightTopConstraint2?.isActive = false
+            if let pointCenter = self.pointCenter {
+                self.pointLeftCenterConstraint = self.pointLeft?.centerY(to: pointCenter)
+                self.pointRightCenterConstraint = self.pointRight?.centerY(to: pointCenter)
+            }
+            self.superview?.layoutIfNeeded()
+        }, completion: { _ in
+            self.animatePoints()
+        })
+    }
+    
+    func animatePoints() {
+        UIView.animate(withDuration: 0.6, delay: 0, options: [.repeat, .autoreverse], animations: {
+            self.pointLeft?.alpha = 0
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 0.6, delay: 0.1, options: [.repeat, .autoreverse], animations: {
+            self.pointCenter?.alpha = 0
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 0.6, delay: 0.2, options: [.repeat, .autoreverse], animations: {
+            self.pointRight?.alpha = 0
+        }, completion: nil)
     }
     
     func prepareReset() {
@@ -156,10 +236,19 @@ private class PullToRefreshView: UIView {
     }
     
     func reset() {
+        pointLeft?.layer.removeAllAnimations()
+        pointCenter?.layer.removeAllAnimations()
+        pointRight?.layer.removeAllAnimations()
+        pointLeft?.alpha = 1
+        pointCenter?.alpha = 1
+        pointRight?.alpha = 1
+        pointLeftCenterConstraint?.isActive = false
         pointCenterBottomConstraint?.isActive = false
         pointCenterTopConstraint2?.isActive = false
         pointRightBottomConstraint?.isActive = false
         pointRightTopConstraint2?.isActive = false
+        pointRightCenterConstraint?.isActive = false
+        pointLeftTopConstraint = pointLeft?.topToSuperview(offset: padding, relation: .equalOrGreater)
         pointCenterTopConstraint = pointCenter?.topToSuperview(offset: padding, relation: .equalOrGreater)
         pointRightTopConstraint = pointRight?.topToSuperview(offset: padding, relation: .equalOrGreater)
     }
@@ -178,7 +267,7 @@ private class PullToRefreshView: UIView {
         if let pointCenter = pointCenter {
             pointLeft = createPoint()
             pointLeft?.rightToLeft(of: pointCenter, offset: -spacing)
-            pointLeft?.topToSuperview(offset: padding)
+            pointLeftTopConstraint = pointLeft?.topToSuperview(offset: padding, relation: .equalOrGreater)
         }
         
         if let pointCenter = pointCenter {

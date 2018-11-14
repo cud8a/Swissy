@@ -52,6 +52,7 @@ class StartupViewModel: NSObject {
                 self?.getForecast(withIndex: index + 1)
             } else {
                 self?.state.value = .error
+                self?.segue.value = Segue.cities.rawValue
             }
         }
     }
