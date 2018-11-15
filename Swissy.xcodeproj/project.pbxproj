@@ -10,6 +10,7 @@
 		020EB335218E4ECF00B9AFE0 /* StartupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020EB334218E4ECF00B9AFE0 /* StartupViewModel.swift */; };
 		020EB337218E4F5A00B9AFE0 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020EB336218E4F5A00B9AFE0 /* Dynamic.swift */; };
 		020EB339218E50C200B9AFE0 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020EB338218E50C200B9AFE0 /* ViewModelState.swift */; };
+		023B844A219E0F4500FFE674 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023B8449219E0F4500FFE674 /* Util.swift */; };
 		02648AD12190EE6A00ED94C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02648AD02190EE6900ED94C9 /* GoogleService-Info.plist */; };
 		0298EB392190CE5E00C0239B /* CitiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298EB382190CE5E00C0239B /* CitiesService.swift */; };
 		02B78DD721938360004487D5 /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B78DD621938360004487D5 /* PullToRefresh.swift */; };
@@ -40,6 +41,7 @@
 		020EB334218E4ECF00B9AFE0 /* StartupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupViewModel.swift; sourceTree = "<group>"; };
 		020EB336218E4F5A00B9AFE0 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		020EB338218E50C200B9AFE0 /* ViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelState.swift; sourceTree = "<group>"; };
+		023B8449219E0F4500FFE674 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		02648AD02190EE6900ED94C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0298EB382190CE5E00C0239B /* CitiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesService.swift; sourceTree = "<group>"; };
 		02B78DD621938360004487D5 /* PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				02B78DD621938360004487D5 /* PullToRefresh.swift */,
+				023B8449219E0F4500FFE674 /* Util.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				02CF30C9218DEB27003ADDC6 /* StartupViewController.swift in Sources */,
 				02FAF350218F5AB100A6E023 /* WeatherIcon.swift in Sources */,
 				02FAF35E218F659B00A6E023 /* Segue.swift in Sources */,
+				023B844A219E0F4500FFE674 /* Util.swift in Sources */,
 				02FF6D74219CBC550088485A /* ForecastView.swift in Sources */,
 				02CF30C7218DEB27003ADDC6 /* AppDelegate.swift in Sources */,
 				02B78DD721938360004487D5 /* PullToRefresh.swift in Sources */,

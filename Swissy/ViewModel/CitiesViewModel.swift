@@ -56,6 +56,8 @@ extension CitiesViewModel: UITableViewDataSource {
                 cell.labelInfo.text = currently.info
                 cell.labelIcon.text = currently.icon?.image
                 cell.forecast.forecast = forecasts[id]?.daily?.data?.map({CGFloat(2 * ($0.temperatureMax ?? 0))})
+                cell.forecast.days = forecasts[id]?.daily?.data?.compactMap({$0.dayShort})
+                cell.labelMinMax.text = forecasts[id]?.daily?.data?.first?.minMax
             }
             return cell
         }

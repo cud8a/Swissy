@@ -16,11 +16,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="99" id="KGk-i7-Jjw" customClass="CityForecastCell" customModule="Swissy" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="509" height="95"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="117" id="KGk-i7-Jjw" customClass="CityForecastCell" customModule="Swissy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="509" height="113"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="509" height="94.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="509" height="112.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7t-GF-5Dh">
@@ -29,7 +29,7 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18°C, Leicht bewölkt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLO-cy-wxk">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18°C, Leicht bewölkt" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLO-cy-wxk">
                         <rect key="frame" x="20" y="45" width="152.5" height="21"/>
                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -42,17 +42,24 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2y7-H3-JS9" customClass="ForecastView" customModule="Swissy" customModuleProvider="target">
-                        <rect key="frame" x="389" y="11" width="100" height="73"/>
+                        <rect key="frame" x="389" y="11" width="100" height="91"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="NLv-Xd-125"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6°C/16°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icx-fB-vqS">
+                        <rect key="frame" x="20" y="72" width="70" height="19"/>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.0" green="0.36862745099999999" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="e7t-GF-5Dh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="0za-bZ-A2G"/>
                     <constraint firstItem="2y7-H3-JS9" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="6G3-So-E5x"/>
+                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="icx-fB-vqS" secondAttribute="bottom" constant="6" id="6NJ-Ie-dPZ"/>
                     <constraint firstItem="DLO-cy-wxk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Ee1-Qa-kzY"/>
                     <constraint firstItem="2y7-H3-JS9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DLO-cy-wxk" secondAttribute="trailing" constant="10" id="EnE-wk-0dz"/>
                     <constraint firstItem="DLO-cy-wxk" firstAttribute="top" secondItem="HGa-K6-5xh" secondAttribute="bottom" constant="4" id="Iey-OY-Q7D"/>
@@ -62,8 +69,9 @@
                     <constraint firstItem="2y7-H3-JS9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HGa-K6-5xh" secondAttribute="trailing" constant="10" id="XWe-hy-SdO"/>
                     <constraint firstItem="2y7-H3-JS9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="caf-th-Ich"/>
                     <constraint firstItem="HGa-K6-5xh" firstAttribute="leading" secondItem="e7t-GF-5Dh" secondAttribute="trailing" constant="10" id="jA7-2j-bol"/>
-                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="DLO-cy-wxk" secondAttribute="bottom" constant="10" id="kPU-NR-Fj8"/>
+                    <constraint firstItem="icx-fB-vqS" firstAttribute="top" secondItem="DLO-cy-wxk" secondAttribute="bottom" constant="6" id="jJa-LU-JOE"/>
                     <constraint firstItem="e7t-GF-5Dh" firstAttribute="centerY" secondItem="HGa-K6-5xh" secondAttribute="centerY" id="sCb-HJ-FTX"/>
+                    <constraint firstItem="icx-fB-vqS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="xkD-Fn-VOl"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -73,8 +81,9 @@
                 <outlet property="labelCity" destination="HGa-K6-5xh" id="Aca-K7-24q"/>
                 <outlet property="labelIcon" destination="e7t-GF-5Dh" id="LlC-jS-vkp"/>
                 <outlet property="labelInfo" destination="DLO-cy-wxk" id="nfF-Mi-QA4"/>
+                <outlet property="labelMinMax" destination="icx-fB-vqS" id="tGX-24-uOa"/>
             </connections>
-            <point key="canvasLocation" x="-178.40000000000001" y="-76.911544227886068"/>
+            <point key="canvasLocation" x="-42" y="-89"/>
         </tableViewCell>
     </objects>
 </document>

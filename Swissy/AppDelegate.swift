@@ -40,22 +40,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 }
-
-func delay(closure: @escaping () -> Void, after: DispatchTimeInterval) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + after) {
-        closure()
-    }
-}
-
-func main(closure: @escaping () -> Void) {
-    
-    guard Thread.current.isMainThread == false else {
-        closure()
-        return
-    }
-    
-    DispatchQueue.main.async {
-        closure()
-    }
-}
-

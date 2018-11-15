@@ -15,6 +15,7 @@ class CityForecastCell: UITableViewCell {
     @IBOutlet weak var labelInfo: UILabel!
     @IBOutlet weak var labelIcon: UILabel!
     @IBOutlet weak var forecast: ForecastView!
+    @IBOutlet weak var labelMinMax: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
