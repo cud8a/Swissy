@@ -21,7 +21,7 @@ func main(closure: @escaping () -> Void) {
         return
     }
     
-    DispatchQueue.main.async {
+    DispatchQueue.main.sync {
         closure()
     }
 }

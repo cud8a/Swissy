@@ -15,7 +15,6 @@ class CitiesViewController: UIViewController {
     @IBOutlet weak var itemAdd: UIBarButtonItem!
     
     var viewModel: CitiesViewModel?
-    var pull: PullToRefresh?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,26 +26,29 @@ class CitiesViewController: UIViewController {
             tableView.dataSource = viewModel
         }
         
-        pull = PullToRefresh(tableView: tableView)
-        pull?.delegate = self
-        
         bindModel()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    @objc func applicationDidBecomeActive() {
+        viewModel?.startReload()
     }
     
     @IBAction func addClicked(_ sender: Any) {
-        pull?.reloadTable()
     }
     
     private func bindModel() {
         viewModel?.reload.bind { [weak self] state in
-            self?.pull?.reloadTable()
+            main {
+                switch state {
+                case .loading: self?.showLoading()
+                default:
+                    self?.tableView?.reloadData()
+                    self?.hideLoading()
+                }
+            }
+            
         }
-    }
-}
-
-extension CitiesViewController: PullToRefreshDelegate {
-    func refresh() {
-        UIImpactFeedbackGenerator().impactOccurred()
-        viewModel?.startReload()
     }
 }

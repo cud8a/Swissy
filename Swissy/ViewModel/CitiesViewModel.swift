@@ -32,13 +32,11 @@ class CitiesViewModel: NSObject {
         }
         
         ForecastService.forecast(withCity: city) { [weak self] forecast, error in
-            main {
-                if let id = city.id, let forecast = forecast {
-                    self?.forecasts[id] = forecast
-                    self?.getForecast(withIndex: index + 1)
-                } else {
-                    self?.reload.value = .error
-                }
+            if let id = city.id, let forecast = forecast {
+                self?.forecasts[id] = forecast
+                self?.getForecast(withIndex: index + 1)
+            } else {
+                self?.reload.value = .error
             }
         }
     }

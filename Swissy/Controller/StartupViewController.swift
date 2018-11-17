@@ -14,13 +14,28 @@ class StartupViewController: UIViewController {
 
     @IBOutlet weak var labelSwissy: UILabel!
     @IBOutlet weak var topSpace: NSLayoutConstraint?
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let viewModel = StartupViewModel()
+    let points = AnimatedPointsViewController()
+    
+    var canContinueFromUI = false {
+        didSet {
+            canContinueFromUI = true
+            _continue()
+        }
+    }
+    
+    var canContinueFromViewModel = false {
+        didSet {
+            canContinueFromViewModel = true
+            _continue()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        animateSwissy()
+        addChild(points)
+        delay(closure: { self.animateSwissy() }, after: .milliseconds(10))
         bindModel()
     }
     
@@ -34,25 +49,33 @@ class StartupViewController: UIViewController {
     }
     
     private func bindModel() {
-        viewModel.state.bind { [weak self] state in
-            switch state {
-            case .loading: self?.activityIndicator.startAnimating()
-            default: self?.activityIndicator.stopAnimating()
-            }
-        }
-        
         viewModel.segue.bind { [weak self] segue in
-            if let segue = segue {
-                self?.performSegue(withIdentifier: segue, sender: nil)
+            if let _ = segue {
+                self?.canContinueFromViewModel = true
             }
         }
     }
     
     private func animateSwissy() {
         topSpace?.isActive = false
-        activityIndicator?.topToBottom(of: labelSwissy, offset: 10)
+        labelSwissy.centerYToSuperview(offset: -60)
         UIViewPropertyAnimator(duration: 1, dampingRatio: 1) {
             self.view.layoutIfNeeded()
         }.startAnimation()
+        
+        delay(closure: { self.canContinueFromUI = true }, after: .seconds(2))
+    }
+    
+    private func _continue() {
+        guard canContinueFromUI, canContinueFromViewModel else {return}
+        points.hide()
+        
+        UIView.animate(withDuration: 0.3) {
+            self.labelSwissy.alpha = 0
+        }
+        
+        if let segue = self.viewModel.segue.value {
+            self.performSegue(withIdentifier: segue, sender: nil)
+        }
     }
 }

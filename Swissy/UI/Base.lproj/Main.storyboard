@@ -23,22 +23,15 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LUz-FU-hPO">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.36862745099999999" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="THo-Di-MNi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EP6-M1-ico"/>
                             <constraint firstItem="THo-Di-MNi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="160" id="WwO-VY-aSJ"/>
-                            <constraint firstItem="LUz-FU-hPO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lEq-C6-bzs"/>
-                            <constraint firstItem="LUz-FU-hPO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pGq-Tu-BsO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="LUz-FU-hPO" id="qnJ-fa-K1B"/>
                         <outlet property="labelSwissy" destination="THo-Di-MNi" id="rct-7X-dSO"/>
                         <outlet property="topSpace" destination="WwO-VY-aSJ" id="muR-LP-mkV"/>
                         <segue destination="nhF-Ib-9qA" kind="show" identifier="cities" id="Ub4-H5-sPd"/>
@@ -109,6 +102,19 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7n-kk-ts0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="408.80000000000001" y="156.97151424287858"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SCp-Qh-8gO">
+            <objects>
+                <viewController id="501-UX-anf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="47z-il-HKL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zQz-eY-KuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
 </document>
