@@ -13,8 +13,8 @@
 		023B844A219E0F4500FFE674 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023B8449219E0F4500FFE674 /* Util.swift */; };
 		02648AD12190EE6A00ED94C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02648AD02190EE6900ED94C9 /* GoogleService-Info.plist */; };
 		02709C1E21A0226D005F206A /* UIViewController+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02709C1D21A0226D005F206A /* UIViewController+ActivityIndicator.swift */; };
-		02709C2321A03160005F206A /* AnimatedPointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02709C2121A03160005F206A /* AnimatedPointsViewController.swift */; };
-		02709C2421A03160005F206A /* AnimatedPointsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02709C2221A03160005F206A /* AnimatedPointsViewController.xib */; };
+		02709C2321A03160005F206A /* AnimatedDotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02709C2121A03160005F206A /* AnimatedDotsViewController.swift */; };
+		02709C2421A03160005F206A /* AnimatedDotsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02709C2221A03160005F206A /* AnimatedDotsViewController.xib */; };
 		0298EB392190CE5E00C0239B /* CitiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298EB382190CE5E00C0239B /* CitiesService.swift */; };
 		02B78DD721938360004487D5 /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B78DD621938360004487D5 /* PullToRefresh.swift */; };
 		02CF30C7218DEB27003ADDC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CF30C6218DEB27003ADDC6 /* AppDelegate.swift */; };
@@ -47,8 +47,8 @@
 		023B8449219E0F4500FFE674 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		02648AD02190EE6900ED94C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02709C1D21A0226D005F206A /* UIViewController+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityIndicator.swift"; sourceTree = "<group>"; };
-		02709C2121A03160005F206A /* AnimatedPointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedPointsViewController.swift; sourceTree = "<group>"; };
-		02709C2221A03160005F206A /* AnimatedPointsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimatedPointsViewController.xib; sourceTree = "<group>"; };
+		02709C2121A03160005F206A /* AnimatedDotsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedDotsViewController.swift; sourceTree = "<group>"; };
+		02709C2221A03160005F206A /* AnimatedDotsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimatedDotsViewController.xib; sourceTree = "<group>"; };
 		0298EB382190CE5E00C0239B /* CitiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesService.swift; sourceTree = "<group>"; };
 		02B78DD621938360004487D5 /* PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
 		02CF30C3218DEB27003ADDC6 /* Swissy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swissy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,7 +153,7 @@
 		02FAF353218F60F000A6E023 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				02709C2121A03160005F206A /* AnimatedPointsViewController.swift */,
+				02709C2121A03160005F206A /* AnimatedDotsViewController.swift */,
 				02CF30C8218DEB27003ADDC6 /* StartupViewController.swift */,
 				02FAF351218F606D00A6E023 /* CitiesViewController.swift */,
 				02FAF35D218F659B00A6E023 /* Segue.swift */,
@@ -187,7 +187,7 @@
 				02FAF359218F621100A6E023 /* CityForecastCell.xib */,
 				02CF30CA218DEB27003ADDC6 /* Main.storyboard */,
 				02CF30CF218DEB2A003ADDC6 /* LaunchScreen.storyboard */,
-				02709C2221A03160005F206A /* AnimatedPointsViewController.xib */,
+				02709C2221A03160005F206A /* AnimatedDotsViewController.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -299,7 +299,7 @@
 				02CF30CE218DEB2A003ADDC6 /* Assets.xcassets in Resources */,
 				02FAF35B218F621100A6E023 /* CityForecastCell.xib in Resources */,
 				02CF30CC218DEB27003ADDC6 /* Main.storyboard in Resources */,
-				02709C2421A03160005F206A /* AnimatedPointsViewController.xib in Resources */,
+				02709C2421A03160005F206A /* AnimatedDotsViewController.xib in Resources */,
 				02648AD12190EE6A00ED94C9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,7 +380,7 @@
 				020EB339218E50C200B9AFE0 /* ViewModelState.swift in Sources */,
 				02FAF360218F694A00A6E023 /* Cell.swift in Sources */,
 				020EB335218E4ECF00B9AFE0 /* StartupViewModel.swift in Sources */,
-				02709C2321A03160005F206A /* AnimatedPointsViewController.swift in Sources */,
+				02709C2321A03160005F206A /* AnimatedDotsViewController.swift in Sources */,
 				02FAF352218F606D00A6E023 /* CitiesViewController.swift in Sources */,
 				020EB337218E4F5A00B9AFE0 /* Dynamic.swift in Sources */,
 				02FAF36F218F800100A6E023 /* ServiceError.swift in Sources */,

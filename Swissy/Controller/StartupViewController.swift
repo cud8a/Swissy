@@ -16,7 +16,7 @@ class StartupViewController: UIViewController {
     @IBOutlet weak var topSpace: NSLayoutConstraint?
     
     let viewModel = StartupViewModel()
-    let points = AnimatedPointsViewController()
+    let dots = AnimatedDotsViewController()
     
     var canContinueFromUI = false {
         didSet {
@@ -34,7 +34,7 @@ class StartupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addChild(points)
+        addChild(dots)
         delay(closure: { self.animateSwissy() }, after: .milliseconds(10))
         bindModel()
     }
@@ -68,7 +68,7 @@ class StartupViewController: UIViewController {
     
     private func _continue() {
         guard canContinueFromUI, canContinueFromViewModel else {return}
-        points.hide()
+        dots.hide()
         
         UIView.animate(withDuration: 0.3) {
             self.labelSwissy.alpha = 0

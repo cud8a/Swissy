@@ -10,14 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimatedPointsViewController" customModule="Swissy" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimatedDotsViewController" customModule="Swissy" customModuleProvider="target">
             <connections>
                 <outlet property="dimView" destination="vGg-j4-DjQ" id="E91-Nc-PJK"/>
-                <outlet property="pointsContainer" destination="5ug-5M-8BT" id="Dmd-b6-oUF"/>
+                <outlet property="dotsContainer" destination="5ug-5M-8BT" id="fTJ-mf-DYg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="points" destination="lFj-1K-iHi" collectionClass="NSMutableArray" id="Qh6-e9-RUZ"/>
-                <outletCollection property="points" destination="SY0-Ij-x05" collectionClass="NSMutableArray" id="4Km-MR-DZX"/>
-                <outletCollection property="points" destination="JbR-2k-wv6" collectionClass="NSMutableArray" id="rHA-nZ-cQh"/>
+                <outletCollection property="dots" destination="lFj-1K-iHi" collectionClass="NSMutableArray" id="qBA-EY-neR"/>
+                <outletCollection property="dots" destination="SY0-Ij-x05" collectionClass="NSMutableArray" id="PbN-JR-cUj"/>
+                <outletCollection property="dots" destination="JbR-2k-wv6" collectionClass="NSMutableArray" id="buC-Uw-l4A"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

@@ -46,7 +46,7 @@ class ForecastView: UIView {
             let y = CGFloat(rect.height - 40 - temperature)
             let drect = CGRect(x: x, y: y, width: 5, height: 5)
             let bpath = UIBezierPath(roundedRect: drect, cornerRadius: 2)
-            UIColor(named: "Highlight")?.set()
+            UIColor.white.set()
             bpath.fill()
             
             if index == 0 {
@@ -63,7 +63,7 @@ class ForecastView: UIView {
             }
         }
         
-        UIColor(named: "Highlight")?.set()
+        UIColor.white.set()
         lines.stroke()
     }
 }

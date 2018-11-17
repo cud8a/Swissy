@@ -15,10 +15,10 @@ extension UIViewController {
     }
     
     private func _showLoading() {
-        guard children.filter({$0 is AnimatedPointsViewController}).count == 0 else {return}
+        guard children.filter({$0 is AnimatedDotsViewController}).count == 0 else {return}
         
-        let points = AnimatedPointsViewController(showDimView: true)
-        addChild(points)
+        let dots = AnimatedDotsViewController(showDimView: true)
+        addChild(dots)
         
         MinimumShow.start(viewController: self)
     }
@@ -32,8 +32,8 @@ extension UIViewController {
     }
     
     private func _hide() {
-        guard let points = children.filter({$0 is AnimatedPointsViewController}).first as? AnimatedPointsViewController else {return}
-        points.hide()
+        guard let dots = children.filter({$0 is AnimatedDotsViewController}).first as? AnimatedDotsViewController else {return}
+        dots.hide()
     }
     
     private enum MinimumShow {

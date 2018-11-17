@@ -1,5 +1,5 @@
 //
-//  AnimatedPointsViewController.swift
+//  AnimatedDotsViewController.swift
 //  Swissy
 //
 //  Created by Tamas Bara on 17.11.18.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-class AnimatedPointsViewController: UIViewController {
+class AnimatedDotsViewController: UIViewController {
 
     @IBOutlet weak var dimView: UIView!
-    @IBOutlet var points: [UIView]!
-    @IBOutlet weak var pointsContainer: UIView!
+    @IBOutlet var dots: [UIView]!
+    @IBOutlet weak var dotsContainer: UIView!
     
     var showDimView = false
     
     init(showDimView: Bool = false) {
         self.showDimView = showDimView
-        super.init(nibName: "AnimatedPointsViewController", bundle: nil)
+        super.init(nibName: "AnimatedDotsViewController", bundle: nil)
         addObserver(self, forKeyPath: #keyPath(parent), options: [.old, .new], context: nil)
     }
     
@@ -36,7 +36,7 @@ class AnimatedPointsViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.edgesToSuperview()
         _fadeIn()
-        animatePoints()
+        animateDots()
     }
     
     private func _fadeIn() {
@@ -44,7 +44,7 @@ class AnimatedPointsViewController: UIViewController {
             if self.showDimView {
                 self.dimView.alpha = 0.7
             }
-            self.pointsContainer.alpha = 1
+            self.dotsContainer.alpha = 1
         }
     }
     
@@ -53,7 +53,7 @@ class AnimatedPointsViewController: UIViewController {
             if self.showDimView {
                 self.dimView.alpha = 0
             }
-            self.pointsContainer.alpha = 0
+            self.dotsContainer.alpha = 0
         }, completion: { _ in
             completion()
         })
@@ -61,15 +61,15 @@ class AnimatedPointsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        points.forEach {
+        dots.forEach {
             $0.layer.cornerRadius = $0.frame.height / 2
         }
     }
     
-    private func animatePoints() {
-        for (index, point) in points.enumerated() {
+    private func animateDots() {
+        for (index, dot) in dots.enumerated() {
             UIView.animate(withDuration: 0.6, delay: 0.1 * Double(index), options: [.repeat, .autoreverse], animations: {
-                point.alpha = 1
+                dot.alpha = 1
             }, completion: nil)
         }
     }
@@ -81,6 +81,6 @@ class AnimatedPointsViewController: UIViewController {
     }
     
     deinit {
-        print("--- AnimatedPointsViewController - deinit")
+        print("--- AnimatedDotsViewController - deinit")
     }
 }
