@@ -16,6 +16,11 @@
 		02709C2321A03160005F206A /* AnimatedDotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02709C2121A03160005F206A /* AnimatedDotsViewController.swift */; };
 		02709C2421A03160005F206A /* AnimatedDotsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02709C2221A03160005F206A /* AnimatedDotsViewController.xib */; };
 		0298EB392190CE5E00C0239B /* CitiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298EB382190CE5E00C0239B /* CitiesService.swift */; };
+		02B2A7D421A0BFF0006637CE /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2A7D321A0BFF0006637CE /* ForecastViewController.swift */; };
+		02B2A7D621A0C016006637CE /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2A7D521A0C016006637CE /* ForecastViewModel.swift */; };
+		02B2A7D921A0C164006637CE /* DailyForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2A7D721A0C164006637CE /* DailyForecastCell.swift */; };
+		02B2A7DA21A0C164006637CE /* DailyForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B2A7D821A0C164006637CE /* DailyForecastCell.xib */; };
+		02B2A7DC21A0D254006637CE /* response.json in Resources */ = {isa = PBXBuildFile; fileRef = 02B2A7DB21A0D254006637CE /* response.json */; };
 		02B78DD721938360004487D5 /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B78DD621938360004487D5 /* PullToRefresh.swift */; };
 		02CF30C7218DEB27003ADDC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CF30C6218DEB27003ADDC6 /* AppDelegate.swift */; };
 		02CF30C9218DEB27003ADDC6 /* StartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CF30C8218DEB27003ADDC6 /* StartupViewController.swift */; };
@@ -50,6 +55,11 @@
 		02709C2121A03160005F206A /* AnimatedDotsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedDotsViewController.swift; sourceTree = "<group>"; };
 		02709C2221A03160005F206A /* AnimatedDotsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimatedDotsViewController.xib; sourceTree = "<group>"; };
 		0298EB382190CE5E00C0239B /* CitiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesService.swift; sourceTree = "<group>"; };
+		02B2A7D321A0BFF0006637CE /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		02B2A7D521A0C016006637CE /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
+		02B2A7D721A0C164006637CE /* DailyForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastCell.swift; sourceTree = "<group>"; };
+		02B2A7D821A0C164006637CE /* DailyForecastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyForecastCell.xib; sourceTree = "<group>"; };
+		02B2A7DB21A0D254006637CE /* response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = response.json; sourceTree = "<group>"; };
 		02B78DD621938360004487D5 /* PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
 		02CF30C3218DEB27003ADDC6 /* Swissy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swissy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02CF30C6218DEB27003ADDC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +144,7 @@
 				02CF30C6218DEB27003ADDC6 /* AppDelegate.swift */,
 				02CF30CD218DEB2A003ADDC6 /* Assets.xcassets */,
 				02CF30D2218DEB2A003ADDC6 /* Info.plist */,
+				02B2A7DB21A0D254006637CE /* response.json */,
 			);
 			path = Swissy;
 			sourceTree = "<group>";
@@ -157,6 +168,7 @@
 				02CF30C8218DEB27003ADDC6 /* StartupViewController.swift */,
 				02FAF351218F606D00A6E023 /* CitiesViewController.swift */,
 				02FAF35D218F659B00A6E023 /* Segue.swift */,
+				02B2A7D321A0BFF0006637CE /* ForecastViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,6 +180,7 @@
 				020EB336218E4F5A00B9AFE0 /* Dynamic.swift */,
 				020EB338218E50C200B9AFE0 /* ViewModelState.swift */,
 				02FAF355218F612900A6E023 /* CitiesViewModel.swift */,
+				02B2A7D521A0C016006637CE /* ForecastViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -175,6 +188,7 @@
 		02FAF357218F61E600A6E023 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				02B2A7D721A0C164006637CE /* DailyForecastCell.swift */,
 				02FAF358218F621100A6E023 /* CityForecastCell.swift */,
 				02FAF35F218F694A00A6E023 /* Cell.swift */,
 			);
@@ -188,6 +202,7 @@
 				02CF30CA218DEB27003ADDC6 /* Main.storyboard */,
 				02CF30CF218DEB2A003ADDC6 /* LaunchScreen.storyboard */,
 				02709C2221A03160005F206A /* AnimatedDotsViewController.xib */,
+				02B2A7D821A0C164006637CE /* DailyForecastCell.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -299,6 +314,8 @@
 				02CF30CE218DEB2A003ADDC6 /* Assets.xcassets in Resources */,
 				02FAF35B218F621100A6E023 /* CityForecastCell.xib in Resources */,
 				02CF30CC218DEB27003ADDC6 /* Main.storyboard in Resources */,
+				02B2A7DC21A0D254006637CE /* response.json in Resources */,
+				02B2A7DA21A0C164006637CE /* DailyForecastCell.xib in Resources */,
 				02709C2421A03160005F206A /* AnimatedDotsViewController.xib in Resources */,
 				02648AD12190EE6A00ED94C9 /* GoogleService-Info.plist in Resources */,
 			);
@@ -378,11 +395,13 @@
 			files = (
 				02FAF34E218F5A4400A6E023 /* WeatherInfo.swift in Sources */,
 				020EB339218E50C200B9AFE0 /* ViewModelState.swift in Sources */,
+				02B2A7D421A0BFF0006637CE /* ForecastViewController.swift in Sources */,
 				02FAF360218F694A00A6E023 /* Cell.swift in Sources */,
 				020EB335218E4ECF00B9AFE0 /* StartupViewModel.swift in Sources */,
 				02709C2321A03160005F206A /* AnimatedDotsViewController.swift in Sources */,
 				02FAF352218F606D00A6E023 /* CitiesViewController.swift in Sources */,
 				020EB337218E4F5A00B9AFE0 /* Dynamic.swift in Sources */,
+				02B2A7D921A0C164006637CE /* DailyForecastCell.swift in Sources */,
 				02FAF36F218F800100A6E023 /* ServiceError.swift in Sources */,
 				02FAF36D218F7E9600A6E023 /* ForecastService.swift in Sources */,
 				02CF30C9218DEB27003ADDC6 /* StartupViewController.swift in Sources */,
@@ -398,6 +417,7 @@
 				02709C1E21A0226D005F206A /* UIViewController+ActivityIndicator.swift in Sources */,
 				0298EB392190CE5E00C0239B /* CitiesService.swift in Sources */,
 				02FAF363218F6FF600A6E023 /* Collection+Swissy.swift in Sources */,
+				02B2A7D621A0C016006637CE /* ForecastViewModel.swift in Sources */,
 				02FAF35A218F621100A6E023 /* CityForecastCell.swift in Sources */,
 				02FAF356218F612900A6E023 /* CitiesViewModel.swift in Sources */,
 			);

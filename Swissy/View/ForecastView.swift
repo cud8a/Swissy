@@ -26,9 +26,13 @@ class ForecastView: UIView {
     
         guard let forecast = forecast else {return}
         
+        let minimum = forecast.min() ?? 0
+        
         let threshold = UIBezierPath()
-        threshold.move(to: CGPoint(x: 4, y: rect.height - 56))
-        threshold.addLine(to: CGPoint(x: rect.width - 8, y: rect.height - 56))
+        
+        let yThreshold = rect.height - 56 + minimum / 2
+        threshold.move(to: CGPoint(x: 4, y: yThreshold))
+        threshold.addLine(to: CGPoint(x: rect.width - 8, y: yThreshold))
         
         UIColor.lightGray.set()
         threshold.lineWidth = 0.5
@@ -43,7 +47,7 @@ class ForecastView: UIView {
             }
             
             let x = CGFloat(10 + index * 12)
-            let y = CGFloat(rect.height - 40 - temperature)
+            let y = CGFloat(rect.height - 40 - temperature + minimum / 2)
             let drect = CGRect(x: x, y: y, width: 5, height: 5)
             let bpath = UIBezierPath(roundedRect: drect, cornerRadius: 2)
             UIColor.white.set()

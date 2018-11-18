@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Font Awesome 5 Free-Solid-900.otf">
+            <string>FontAwesome5FreeSolid</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="132" id="KGk-i7-Jjw" customClass="DailyForecastCell" customModule="Swissy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="535" height="132"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="535" height="131.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Samstag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wk-dT-Yem">
+                        <rect key="frame" x="20" y="15" width="93" height="26"/>
+                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min: 6°C, Max: 16°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cas-66-fWO">
+                        <rect key="frame" x="20" y="47" width="142.5" height="19"/>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07:23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uc2-Ie-CxN">
+                        <rect key="frame" x="483" y="16" width="32" height="16"/>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17:45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QW-qT-QFQ">
+                        <rect key="frame" x="483.5" y="38" width="31.5" height="16"/>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8o9-Mt-jam">
+                        <rect key="frame" x="20" y="74.5" width="35" height="28"/>
+                        <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="28"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leicht bewölkt" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAV-cK-KRB">
+                        <rect key="frame" x="71" y="78" width="102.5" height="21"/>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulo-v3-pHr">
+                        <rect key="frame" x="457" y="26" width="20" height="20"/>
+                        <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.0" green="0.50196078430000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="xAV-cK-KRB" firstAttribute="top" secondItem="Cas-66-fWO" secondAttribute="bottom" constant="12" id="3u0-du-kyh"/>
+                    <constraint firstItem="Cas-66-fWO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="4sq-gg-P9B"/>
+                    <constraint firstItem="xAV-cK-KRB" firstAttribute="leading" secondItem="8o9-Mt-jam" secondAttribute="trailing" constant="16" id="8Xy-O7-SyG"/>
+                    <constraint firstItem="7Wk-dT-Yem" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="9IU-we-IWo"/>
+                    <constraint firstItem="ulo-v3-pHr" firstAttribute="top" secondItem="Uc2-Ie-CxN" secondAttribute="top" constant="10" id="CWt-mk-vQx"/>
+                    <constraint firstItem="Uc2-Ie-CxN" firstAttribute="leading" secondItem="ulo-v3-pHr" secondAttribute="trailing" constant="6" id="DRW-TU-zFA"/>
+                    <constraint firstItem="1QW-qT-QFQ" firstAttribute="top" secondItem="Uc2-Ie-CxN" secondAttribute="bottom" constant="6" id="FSu-oH-2pc"/>
+                    <constraint firstItem="Uc2-Ie-CxN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="IRG-V1-vnw"/>
+                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="xAV-cK-KRB" secondAttribute="bottom" constant="10" id="Jyz-BT-xmb"/>
+                    <constraint firstItem="7Wk-dT-Yem" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="MeS-eC-Dfs"/>
+                    <constraint firstItem="8o9-Mt-jam" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Z5d-yo-UpO"/>
+                    <constraint firstItem="Uc2-Ie-CxN" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="bPH-lM-qYH"/>
+                    <constraint firstItem="8o9-Mt-jam" firstAttribute="centerY" secondItem="xAV-cK-KRB" secondAttribute="centerY" id="clV-cj-o5W"/>
+                    <constraint firstItem="Cas-66-fWO" firstAttribute="top" secondItem="7Wk-dT-Yem" secondAttribute="bottom" constant="6" id="erD-Tj-u46"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="1QW-qT-QFQ" secondAttribute="trailing" id="pTo-Qc-kXD"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="xAV-cK-KRB" secondAttribute="trailing" id="xNb-Bx-ENp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="labelDay" destination="7Wk-dT-Yem" id="K2V-Fs-Hp5"/>
+                <outlet property="labelIcon" destination="8o9-Mt-jam" id="0Se-T2-hXU"/>
+                <outlet property="labelInfo" destination="xAV-cK-KRB" id="xzQ-gJ-GIA"/>
+                <outlet property="labelMinMax" destination="Cas-66-fWO" id="ZwY-18-1P8"/>
+                <outlet property="labelSunrise" destination="Uc2-Ie-CxN" id="cH7-YY-R5q"/>
+                <outlet property="labelSunset" destination="1QW-qT-QFQ" id="h7Z-RN-kIy"/>
+            </connections>
+            <point key="canvasLocation" x="-402.39999999999998" y="58.47076461769116"/>
+        </tableViewCell>
+    </objects>
+</document>

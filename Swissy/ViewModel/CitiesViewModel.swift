@@ -11,12 +11,15 @@ import UIKit
 class CitiesViewModel: NSObject {
  
     let reload: Dynamic<ViewModelState> = Dynamic(.initial)
+    let showCityForecast: Dynamic<City?> = Dynamic(nil)
     
     var forecasts: [String: ForecastResponse] = [:]
     var cities: [City]?
     
     func setupTable(_ tableView: UITableView) {
         Cell.cityForecast.register(tableView)
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     func startReload() {
@@ -60,5 +63,11 @@ extension CitiesViewModel: UITableViewDataSource {
             return cell
         }
         return UITableViewCell()
+    }
+}
+
+extension CitiesViewModel: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showCityForecast.value = cities?[safe: indexPath.row]
     }
 }

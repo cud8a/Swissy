@@ -9,7 +9,9 @@
 import UIKit
 
 enum Cell: String {
+    
     case cityForecast = "CityForecastCell"
+    case dailyForecast = "DailyForecastCell"
     
     func register(_ tableView: UITableView) {
         tableView.register(UINib(nibName: rawValue, bundle: nil), forCellReuseIdentifier: rawValue)

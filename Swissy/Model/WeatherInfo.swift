@@ -32,7 +32,7 @@ struct WeatherInfo {
     
     var minMax: String? {
         if let min = temperatureMinCelsius, let max = temperatureMaxCelsius {
-            return min + "/" + max
+            return "Min: " + min + ", Max: " + max
         }
         
         return nil
@@ -71,6 +71,33 @@ struct WeatherInfo {
         
         return nil
     }
+    
+    var dayLong: String? {
+        if let time = time {
+            let formatter = DateFormatter(withFormat: "EEEE", locale: "DE")
+            return formatter.string(from: time)
+        }
+        
+        return nil
+    }
+    
+    var sunrise: String? {
+        if let time = sunriseTime {
+            let formatter = DateFormatter(withFormat: "HH:mm", locale: "DE")
+            return formatter.string(from: time)
+        }
+        
+        return nil
+    }
+    
+    var sunset: String? {
+        if let time = sunsetTime {
+            let formatter = DateFormatter(withFormat: "HH:mm", locale: "DE")
+            return formatter.string(from: time)
+        }
+        
+        return nil
+    }
 
     var summary: String?
     var icon: WeatherIcon?
@@ -78,6 +105,8 @@ struct WeatherInfo {
     var temperatureMin: Double?
     var temperatureMax: Double?
     var time: Date?
+    var sunriseTime: Date?
+    var sunsetTime: Date?
 }
 
 extension WeatherInfo: Mappable {
@@ -90,6 +119,8 @@ extension WeatherInfo: Mappable {
         temperatureMin <- map["temperatureMin"]
         temperatureMax <- map["temperatureMax"]
         time <- (map["time"], DateTransform())
+        sunriseTime <- (map["sunriseTime"], DateTransform())
+        sunsetTime <- (map["sunsetTime"], DateTransform())
     }
 }
 

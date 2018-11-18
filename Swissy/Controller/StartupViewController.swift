@@ -58,7 +58,7 @@ class StartupViewController: UIViewController {
     
     private func animateSwissy() {
         topSpace?.isActive = false
-        labelSwissy.centerYToSuperview(offset: -60)
+        labelSwissy.centerYToSuperview(offset: -50)
         UIViewPropertyAnimator(duration: 1, dampingRatio: 1) {
             self.view.layoutIfNeeded()
         }.startAnimation()
